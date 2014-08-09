@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<title>PixelDraw</title>
+
+		<!--link the javascript and jQuery-->
+		<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+		<script src="pixeldraw.js"></script>
+
+		<link rel="stylesheet" href="jq/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="pixeldraw.css">
+				
+	</head>
+
+	<body>
+		<header>
+			<div id="header">
+				<h1>Pixel-Sketch</h1>
+				<img src="logo.jpg" width="60px" height="60px">
+			</div>
+		</header>
+
+		<div id="options-wrapper">
+
+			<h2>Options</h2>	
+
+			<div id="menu" >
+				<h3>Simple Sketch</h3>
+				<div>
+					<p>
+						Hover mouse over grid to sketch.
+						Choose a shading style below:<br>
+						<form>
+							 <input type="radio" name="style" value="mono">Monochrome<br>
+							 <input type="radio" name="style" value="multi">Multicolor
+						</form>						
+					</p>
+				</div>
+
+
+				<h3>Shade-in Sketch</h3>
+				<div>
+					<p>
+						Hover mouse over grid to sketch.
+						Each pixel will become lighter as
+						you hover over it several times.
+					</p>
+				</div>
+
+
+				<h3>Trail Sketch</h3>
+				<div>
+					<p>
+						Hover mouse over grid to sketch.
+						A trail will follow your pointer over
+						the grid. Try to sign your name with the
+						trail before it disappears!!
+					</p>
+				</div>	
+
+			</div>
+			
+		</div>	
+
+		<div id="info">
+			write message here
+		</div>
+
+		<div id="grid-size">
+			<form>
+				<span>Grid-size :</span> <input type="text" name="grid-size" maxlength="3" size="3"> 
+			</form>
+		</div>
+
+		<button type="button" id="button"> RESET </button>
+
+		<div class="grid">
+			
+		</div>
+
+		<footer>
+			<div id="footer">
+				<a href="https://github.com/letsboogey" id="left-foot">By L.Ramadi</a>
+				<a href="http://www.theodinproject.com/web-development-101/javascript-and-jquery?ref=lc-pb" id="right-foot">The Odin Project</a>
+			</div>
+		</footer>
+	
+	</body>
+</html>
