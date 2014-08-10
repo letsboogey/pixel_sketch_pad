@@ -28,7 +28,7 @@ $(document).ready(function(){
 		};
 	};
 
-	generateGrid(50);
+	generateGrid(10);
 
 	
 
