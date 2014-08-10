@@ -1,34 +1,98 @@
 body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#content-wrapper-left{
+	background-color: red;
+	width: 30%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 }
 
 #header{
+	float: left;
 	height: 100px;
-	width: 800px;
-	margin: 20px auto;
-	text-align: center;
-	line-height: 100px;	
+	width: 450px;
+	margin: 20px 30px;
+	padding-bottom: 20px;
 }
 
 #header > h1{
 	font-size: 50px;
 	font-family: "Trebuchet MS",sans-serif;
 	color: #1c94c4;
+	margin-left: 40px;
+	margin-bottom: 10px;
 }
 
 #header > img{
+	float: right;
+	margin-top: -70px;
+	margin-right: 30px;
+}
+
+.grid-infobox{
+	width: 400px;
+	height: 150px;
+	float: left;
+	position: absolute;
+	left: 60px;
+	top: 40px;
+	border: 1px solid #cccccc;
+	border-radius: 2%;
+}
+
+#infobox-title{
+	width: 170px;
+	height: 40px;
+	color: #1c94c4;
+	font-size: 20px;
+	background-color: #fff;
+	text-align: center;
 	position: relative;
-	left: 180px;
-	bottom: 110px;
+	float: left;
+	left: 80px;
+	top:-40px;
+}
+
+table{
+	float: left;
+	position: absolute;
+	top: 40px;
+	left: 50px;
+}
+
+.stat-label{
+	white-space: nowrap;
+	color: #4d4d4d;
+}
+
+.stat-value > input{
+	text-align: center;
+	border-style: none;
+	color: #c77405;
+	font-size: 16px;
+}
+
+
+.user-control-wrapper{
+	width: 450px;
+	height: 450px;
+	position: absolute;
+	float: left;
+	clear: both;
+	left: 30px;
+	bottom:50px;
+	border:none;
 }
 
 #options-wrapper{
-	position: fixed;
-	bottom: 200px;
 	width: 400px;
-	float: left;
-	margin-left: 20px;
+	margin: 10px auto;
 }
 
 #options-wrapper > h2{
@@ -37,37 +101,67 @@ body{
 	font-size: 30px;
 }
 
-#grid-size{
+#set-grid-size{
 	font-size: 20px;
 	color: #1c94c4;
-	position: fixed;
-	bottom: 100px;
-	left: 250px;
+	float: right;
+	margin-right: 50px;
+	margin-top: 20px; 
+}
+
+#set-grid-size > input{
+	text-align: center;
+}
+
+#reset-button{
+	width: 150px;
+	height: 60px;
+	font-size: 20px;
+	color: #1c94c4;
+	float: left;
+	margin-left: 30px;
+	margin-top: 40px;	
+}
+
+#generate-button{
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+	color: #1c94c4;
+	float: right;
+	clear: right;
+	margin-right: 50px;
+	margin-top: 8px;	
 }
 
 input{
 	font-size: 20px;
 }
 
-#button{
-	width: 150px;
-	height: 60px;
-	font-size: 20px;
-	color: #1c94c4;
-	position: fixed;
-	bottom: 90px;
-	left: 50px;	
-}
 
 .grid{
-	height: 600px;
-	width: 700px;
-	margin: 50px 100px;
+	display: table;
+	border-spacing: 0;
+	height: 650px;
+	width: 650px;
 	float: right;
+	margin-right: 30px;
+	margin-top: 15px;
 	border-radius: 1%;
 	border:1px solid #cccccc;
 	background-color: #e6e6e6;
 }
+
+.cell{
+	display: table-cell;
+	background-color: #800000;
+	border: 1px solid #fff;
+}
+
+.row{
+	display: table-row;
+}
+
 
 #footer{
 	position: fixed;
@@ -78,6 +172,10 @@ input{
 	bottom:0;
 	margin: 0;
 	line-height: 30px;
+}
+
+#footer > a:hover{
+	text-decoration: underline;
 }
 
 #left-foot{
