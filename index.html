@@ -9,14 +9,15 @@
 		<script src="pixeldraw.js"></script>
 
 		<!--stylesheets-->
+		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="jq/jquery-ui.min.css">
-		<link rel="stylesheet" type="text/css" href="pixeldraw.css">
+		<link rel="stylesheet" href="pixeldraw.css">
 				
 	</head>
 
 	<body>
 
-		<div id="content-wrapper-left">
+		<div class="content-wrapper-left">
 			
 			<!--webpage header-->
 			<header>
@@ -97,14 +98,18 @@
 
 					</div>
 				
-				</div>	
-
-				<div id="set-grid-size">
-						Grid-size : <input type="text" name="grid-size" maxlength="3" size="3"> 
 				</div>
 
-				<button type="button" id="reset-button"> RESET </button>
-				<button type="button" id="generate-button"> GENERATE </button>
+				<div class="user-inputs">
+					
+					<div id="set-grid-size">
+						Grid-size : <input type="text" name="grid-size" maxlength="3" size="3"> 
+					</div>
+
+					<button type="button" id="reset-button"> RESET </button>
+					<button type="button" id="generate-button"> GENERATE </button>
+
+				</div>					
 
 			</div>
 
@@ -112,7 +117,7 @@
 		
 		
 		<!--The GRID, the centerpiece of the webpage-->	
-		<div id="content-wrapper-right">	
+		<div class="content-wrapper-right">	
 			<div class="grid">
 				
 			</div>
@@ -121,7 +126,9 @@
 
 		<!--You guessed it, this is the bottom of the webpage-->
 		<footer>
-			<div id="footer">
+			<div id="footer-alias">	</div>
+
+			<div class="footer">
 				<a href="https://github.com/letsboogey" id="left-foot">By L.Ramadi</a>
 				<a href="http://www.theodinproject.com/web-development-101/javascript-and-jquery?ref=lc-pb" id="right-foot">The Odin Project</a>
 			</div>

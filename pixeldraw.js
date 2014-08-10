@@ -1,12 +1,12 @@
 $(document).ready(function(){
 
-	//declare variables
+	//declare global variables
 
 	//create accordion menu for sketch-pad options
 	$('#menu').accordion();
 
 	//slide footer out of view when mouse is not at bottom
-	$('#footer').hide();
+	
 
 
 
