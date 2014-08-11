@@ -153,6 +153,7 @@ input{
 /*the sketchpad area*/
 .grid{
 	display: table;
+	z-index: 10;
 	height: 650px;
 	width: 650px;
 	margin: 15px auto;
@@ -175,7 +176,7 @@ input{
 footer{
 	position: fixed;
 	bottom: 0;
-	height: 70px;
+	height: 10px;
 	width: 100%;
 }
 .footer{
@@ -209,4 +210,7 @@ footer{
 	float: right;
 	right: 300px;
 }
+
+
+
 
