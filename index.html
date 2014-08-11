@@ -4,7 +4,7 @@
 		<title>PixelSketch</title>
 
 		<!--link the javascript and jQuery-->
-		<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
 		<script src="pixeldraw.js"></script>
 
@@ -37,19 +37,19 @@
 					<tr>
 						<td class="stat-label">Chosen Option</td>
 						<td class="stat-value">
-							<input type="text" name="chosen-opt" size="16">
+							<input type="text" name="chosen-opt" size="16" value="simple sketch" readonly>
 						</td>
 					</tr>
 					<tr>
 						<td class="stat-label">Grid Size</td>
 						<td class="stat-value">
-							<input type="text" name="gsize" size="16"> 
+							<input type="text" name="gsize" size="16" value="10 x 10 grid" readonly> 
 						</td>					
 					</tr>
 					<tr>
 						<td class="stat-label">Pixel Count</td>
 						<td class="stat-value">
-							<input type="text" name="pixel-count" size="16">
+							<input type="text" name="pixel-count" size="16" value="100 pixels" readonly>
 						</td>
 					</tr>
 				</table>
@@ -101,14 +101,14 @@
 				</div>
 
 				<div class="user-inputs">
+
+						<div id="set-grid-size">
+							Grid-size : <input type="number" name="dimension" min="4" max="90"  id="grid-dimension"> 
+						</div>
+
+						<button id="reset-button">RESET</button>
+						<button id="generate-button">GENERATE</button>
 					
-					<div id="set-grid-size">
-						Grid-size : <input type="text" name="grid-size" maxlength="3" size="3"> 
-					</div>
-
-					<button type="button" id="reset-button"> RESET </button>
-					<button type="button" id="generate-button"> GENERATE </button>
-
 				</div>					
 
 			</div>
@@ -126,8 +126,6 @@
 
 		<!--You guessed it, this is the bottom of the webpage-->
 		<footer>
-			<div id="footer-alias">	</div>
-
 			<div class="footer">
 				<a href="https://github.com/letsboogey" id="left-foot">By L.Ramadi</a>
 				<a href="http://www.theodinproject.com/web-development-101/javascript-and-jquery?ref=lc-pb" id="right-foot">The Odin Project</a>
