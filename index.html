@@ -66,7 +66,10 @@
 						<h3>Simple Sketch</h3>
 						<div>
 							<p>
-								Hover mouse over grid to sketch.
+								Hover mouse over grid to sketch. Press 
+								mousewheel to pause shading and left button
+								to continue shading.
+
 								Choose a shading style below:<br>
 								<form>
 									 <input type="radio" name="style" value="mono">Monochrome<br>
@@ -79,9 +82,12 @@
 						<h3>Shade-in Sketch</h3>
 						<div>
 							<p>
-								Hover mouse over grid to sketch.
-								Each pixel will become lighter as
-								you hover over it several times.
+								Hover mouse over grid to sketch. Press 
+								mousewheel to pause shading and left button
+								to continue shading.
+
+								With this option, each hover/stroke over the
+								sketchpad will increase the shade of the pixels.
 							</p>
 						</div>
 
@@ -89,10 +95,12 @@
 						<h3>Trail Sketch</h3>
 						<div>
 							<p>
-								Hover mouse over grid to sketch.
-								A trail will follow your pointer over
-								the grid. Try to sign your name with the
-								trail before it disappears!!
+								Hover mouse over grid to sketch. Press 
+								mousewheel to pause shading and left button
+								to continue shading.
+
+
+								With this option, a fading trail will follow your pointer over	the grid.
 							</p>
 						</div>	
 
@@ -103,7 +111,7 @@
 				<div class="user-inputs">
 
 						<div id="set-grid-size">
-							Grid-size : <input type="number" name="dimension" min="4" max="100" value="20" id="grid-dimension"> 
+							Grid-size : <input type="number" name="dimension" min="4" max="100" value="50" id="grid-dimension"> 
 						</div>
 
 						<button id="reset-button">RESET</button>

@@ -4,33 +4,35 @@
 		var g_button = $('#generate-button');
 		var r_button = $('#reset-button');
 		var delay ;
+		var option = $('#menu h3');
 		
 		
 		//default grid on page load with simple sketch
-		generateGrid(60);
+		generateGrid(50);
 		$(".cell").hover(function(){
 	    	$(this).css('background-color', randomColor());
 	    });
 
 
-	    //disable shading if spacebar held down
-	    $(document).ready(function(){
-		     $(this).on('keydown keyup',function(e){
-	      		var events = e.type=="keydown" ? 'none' : 'auto' ;
-	      		if(e.which == 32){
-	        		$('.cell').css('pointer-events' , events);  
-	      		}
-	   		});
-	 	});
-			
-
-
+	    
 	    /*
 		create accordion menu for sketch-pad options
 		and hide the information box
 		 */
 		$('#menu').accordion();	
 		$('.grid-infobox').hide();
+
+
+
+		//pause shading with mouse scroll button	   
+	     $(this).mousedown(function(e){ 
+			if( e.which == 2 ) {  
+ 				$('.cell').css('pointer-events','none'); 
+			}else {
+				$('.cell').css('pointer-events','auto');
+			}; 
+		}); 
+	 
 
 
 
@@ -67,23 +69,26 @@
 
 
 
+		//generate info for sketchpad status display  
+
+
+
 		//action when generate button clicked
-		g_button.click(function(){
-			$(document).ready(function(){
-				clear();
-				dimension = $('#grid-dimension').val();
+		g_button.click(function(){			
+			clear();
+			dimension = $('#grid-dimension').val();
 
-				if(dimension < 4 || dimension > 100){
-					alert("Sorry! Enter a value between 4 and 90");
-				}else{
+			if(dimension < 4 || dimension > 100){
+				alert("Sorry! Enter a value between 4 and 90");
+			}else{
 
-					generateGrid(dimension);
+				generateGrid(dimension);
 
-					//switch statement to choose sketch option
-		
-				};
-			});
+				//switch statement to choose sketch option
+	
+			};
 		});
+		
 
 
 		//action when reset button clicked
