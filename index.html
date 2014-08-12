@@ -33,24 +33,18 @@
 				<div id="infobox-title">
 					<h4>Sketchpad Status</h4>
 				</div>
-				<table>
+				<table class="status-display">
 					<tr>
 						<td class="stat-label">Chosen Option</td>
-						<td class="stat-value">
-							<input type="text" name="chosen-opt" size="16" value="multicolor" readonly>
-						</td>
+						<td class="stat-value" id="option" width="200px"></td>
 					</tr>
 					<tr>
 						<td class="stat-label">Grid Size</td>
-						<td class="stat-value">
-							<input type="text" name="gsize" size="16" value="10 x 10 grid" readonly> 
-						</td>					
+						<td class="stat-value" id="dimension" width="200px"></td>				
 					</tr>
 					<tr>
 						<td class="stat-label">Pixel Count</td>
-						<td class="stat-value">
-							<input type="text" name="pixel-count" size="16" value="100 pixels" readonly>
-						</td>
+						<td class="stat-value" id="pixels" width="200px"></td>
 					</tr>
 				</table>
 			</div>
@@ -71,9 +65,9 @@
 								to continue shading.
 
 								Choose a shading style below:<br>
-								<form>
-									 <input type="radio" name="style" value="mono">Monochrome<br>
-									 <input type="radio" name="style" value="multi">Multicolor
+								<form id="radio-form">
+									 <input type="radio" name="pad_options" value="monochrome" id="mono" />Monochrome<br>
+									 <input type="radio" name="pad_options" value="multicolor"/>Multicolor
 								</form>						
 							</p>
 						</div>

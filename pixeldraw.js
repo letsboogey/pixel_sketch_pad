@@ -3,17 +3,17 @@
 		//declare global variables
 		var g_button = $('#generate-button');
 		var r_button = $('#reset-button');
+		var dimension;
 		var delay ;
-		var option = $('#menu h3');
+		var selected_radio;
+		var monochrome_colour = '#666666';
 		
 		
-		//default grid on page load with simple sketch
-		generateGrid(50);
-		$(".cell").hover(function(){
-	    	$(this).css('background-color', randomColor());
-	    });
-
-
+		//default options on page load with simple sketch
+		dimension = 50;
+		generateGrid(dimension);
+		$("#mono").prop("checked", true);
+		
 	    
 	    /*
 		create accordion menu for sketch-pad options
@@ -21,11 +21,11 @@
 		 */
 		$('#menu').accordion();	
 		$('.grid-infobox').hide();
-
+				
 
 
 		//pause shading with mouse scroll button	   
-	     $(this).mousedown(function(e){ 
+	    $(this).mousedown(function(e){ 
 			if( e.which == 2 ) {  
  				$('.cell').css('pointer-events','none'); 
 			}else {
@@ -40,10 +40,49 @@
 		//mouse in controls area
 		$('.content-wrapper-right').hover(
 			function(){
+				//get active accordion option
+				var active = $('#menu').accordion( "option", "active" );
+				var active_option = $("#menu h3").eq(active).text();
+				
+
+				//generate info for sketchpad status display 
+				$('#dimension').text("'"+dimension+" x "+dimension+"'");
+				$('#pixels').text(dimension*dimension + "  pixels");
+
+				switch (active_option) {
+			        case 'Simple Sketch':
+
+				        selected_radio = $('input[name=pad_options]:checked', '#radio-form').val(); 							
+						$('#option').text(selected_radio);
+						
+						if(selected_radio == 'monochrome'){
+							$(".cell").hover(function(){
+	    						$(this).css('background-color', monochrome_colour );
+	    					});
+						}else if(selected_radio == 'multicolor'){
+							$(".cell").hover(function(){
+	    						$(this).css('background-color', randomColor() );
+	    					});
+						};						            
+			            break;
+
+			        case 'Shade-in Sketch':
+			        	
+			            $('#option').text('shade-in sketch');						
+			            break;
+
+			        case 'Trail Sketch':
+			            
+			            $('#option').text('trail sketch');
+			            break;
+			    }; 
+
+				//delay for webpage title or status box switch
 				delay = setTimeout(function(){
 					$('#header').fadeOut('fast');
 					$('.grid-infobox').fadeIn('slow');
 				},2000)},
+
 			function(){
 				clearTimeout(delay);
 		});
@@ -69,10 +108,6 @@
 
 
 
-		//generate info for sketchpad status display  
-
-
-
 		//action when generate button clicked
 		g_button.click(function(){			
 			clear();
@@ -83,8 +118,6 @@
 			}else{
 
 				generateGrid(dimension);
-
-				//switch statement to choose sketch option
 	
 			};
 		});
@@ -96,12 +129,6 @@
 			reset();
 		});
 
-
-
-		
-		
-		 
-
 			
 
 		//function to generate random colours
@@ -111,7 +138,7 @@
 			var green =Math.floor((Math.random() * 254) + 1);
 
 			var color = "rgb("+red+","+blue+","+green+")";
-			console.log(color);
+			
 			return color;
 		};
 

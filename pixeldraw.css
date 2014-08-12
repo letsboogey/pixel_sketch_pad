@@ -78,11 +78,11 @@ table{
 	font-size: 18px;
 }
 
-.stat-value > input{
+.stat-value{
 	text-align: center;
-	border-style: none;
+	border-style: solid;
 	color: #c77405;
-	font-size: 16px;
+	font-size: 15px;
 	font-family: Courier ,sans-serif;
 }
 
@@ -158,14 +158,14 @@ input{
 	width: 650px;
 	margin: 15px auto;
 	border-radius: 2px;
-	border:1px solid #cccccc;
+	border:2px solid #191919;
 	background-color: #e6e6e6;
 }
 
 .cell{
 	display: table-cell;
 	background-color: #DEEFFF;
-	border: 1px solid #B6BCC2;
+	border: 1px solid #cccccc;
 }
 
 .row{
