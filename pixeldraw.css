@@ -153,6 +153,7 @@ input{
 /*the sketchpad area*/
 .grid{
 	display: table;
+	padding: 0;
 	z-index: 10;
 	height: 650px;
 	width: 650px;
@@ -164,8 +165,8 @@ input{
 
 .cell{
 	display: table-cell;
-	background-color: #DEEFFF;
-	border: 1px solid #cccccc;
+	padding: 0;
+	background-color: #EDECEC;
 }
 
 .row{

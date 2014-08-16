@@ -10,7 +10,7 @@
 		
 		
 		//default options on page load with simple sketch
-		dimension = 50;
+		dimension = 200;
 		generateGrid(dimension);
 		$("#mono").prop("checked", true);
 		
@@ -57,22 +57,25 @@
 						
 						if(selected_radio == 'monochrome'){
 							$(".cell").hover(function(){
-	    						$(this).css('background-color', monochrome_colour );
+	    						$(this).css({'background-color': monochrome_colour });
 	    					});
 						}else if(selected_radio == 'multicolor'){
 							$(".cell").hover(function(){
-	    						$(this).css('background-color', randomColor() );
+	    						$(this).css({'background-color': randomColor() , 'border': 'none'});
 	    					});
 						};						            
 			            break;
 
 			        case 'Shade-in Sketch':
 			        	
+			        	
 			            $('#option').text('shade-in sketch');						
 			            break;
 
 			        case 'Trail Sketch':
-			            
+			        	reset();
+			            trailSketch();
+
 			            $('#option').text('trail sketch');
 			            break;
 			    }; 
@@ -113,8 +116,8 @@
 			clear();
 			dimension = $('#grid-dimension').val();
 
-			if(dimension < 4 || dimension > 100){
-				alert("Sorry! Enter a value between 4 and 90");
+			if(dimension < 2 || dimension > 200){
+				alert("Sorry! Enter a value between 2 and 200");
 			}else{
 
 				generateGrid(dimension);
@@ -128,6 +131,13 @@
 		r_button.click(function(){
 			reset();
 		});
+
+		function trailSketch(){
+			$(".cell").hover(function(){
+	    		$(this).css({'background-color': 'black'});
+	    		$(this).fadeTo( 1000, 0.01 );
+	    	});
+		};
 
 			
 
@@ -146,7 +156,7 @@
 
 		//function to reset grid to original state
 		function reset(){
-			$('.cell').css( "background-color", "#DEEFFF" );
+			$('.cell').css({"background-color" : "#EDECEC"});
 		};
 
 
